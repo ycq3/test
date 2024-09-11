@@ -4,9 +4,9 @@ const Host = "https://api.dydq.eu.org"
 
 module.exports = {
     platform: "PMusic", // 插件名
-    version: "0.0.16", // 版本号
+    version: "0.0.17", // 版本号
     cacheControl: "no-store",
-    srcUrl:'http://172.20.197.110:8080/plugin.js',
+    srcUrl:'https://raw.kkgithub.com/ycq3/test/master/plugin.js',
     async search(query, page, type) {
         if (type === "music") {
 
