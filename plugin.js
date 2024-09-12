@@ -4,7 +4,7 @@ const Host = "https://api.dydq.eu.org/api/music"
 
 module.exports = {
     platform: "PMusic", // 插件名
-    version: "0.0.19", // 版本号
+    version: "0.0.20", // 版本号
     author: "pipiqiang",
     cacheControl: "no-store",
     srcUrl: 'https://raw.kkgithub.com/ycq3/test/master/plugin.js',
@@ -90,12 +90,28 @@ module.exports = {
             url: fakeResult.data.url,
         };
     },
+
     async getTopLists() {
         const {data} = (await axios.get(Host + '/top_lists')).data
         // 获取榜单
         console.log("获取榜单", data)
         return data.results;
     },
+    async getTopListDetail(topListItem) {
+        // 获取榜单详情
+        const {data} = (await axios.get(Host + '/top_list_detail',{
+            params: {
+                id: topListItem.id,
+            }
+        })).data
+
+        console.log("获取榜单详情", {data})
+
+        return {
+            musicList: [],
+        };
+    },
+
     async importMusicSheet(url) {
         // 导入歌单
 
