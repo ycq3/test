@@ -1,10 +1,11 @@
 const axios = require("axios");
 // const Host = "http://127.0.0.1:8082/api/music"
 const Host = "https://api.dydq.eu.org/api/music"
+axios.defaults.timeout = 5000
 
 module.exports = {
     platform: "PMusic", // 插件名
-    version: "0.0.20", // 版本号
+    version: "0.0.21", // 版本号
     author: "pipiqiang",
     cacheControl: "no-store",
     srcUrl: 'https://raw.kkgithub.com/ycq3/test/master/plugin.js',
