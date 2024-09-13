@@ -5,7 +5,7 @@ axios.defaults.timeout = 5000
 
 module.exports = {
     platform: "PMusic", // 插件名
-    version: "0.0.21", // 版本号
+    version: "0.0.22", // 版本号
     author: "pipiqiang",
     cacheControl: "no-store",
     srcUrl: 'https://raw.kkgithub.com/ycq3/test/master/plugin.js',
@@ -110,8 +110,8 @@ module.exports = {
 
         return {
             isEnd: true,
-            sheetItem: data.data,
-            musicList: data.data.musics,
+            sheetItem: data,
+            musicList: data.musics,
         };
     },
 
