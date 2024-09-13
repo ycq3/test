@@ -100,7 +100,7 @@ module.exports = {
     },
     async getTopListDetail(topListItem) {
         // 获取榜单详情
-        const {data} = (await axios.get(Host + '/top_list_detail',{
+        const {data} = (await axios.get(Host + '/top_list_detail', {
             params: {
                 id: topListItem.id,
             }
@@ -109,7 +109,9 @@ module.exports = {
         console.log("获取榜单详情", {data})
 
         return {
-            musicList: [],
+            isEnd: true,
+            sheetItem: data.data,
+            musicList: data.data.musics,
         };
     },
 
