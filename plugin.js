@@ -5,7 +5,7 @@ axios.defaults.timeout = 5000
 
 module.exports = {
     platform: "PMusic", // 插件名
-    version: "0.0.22", // 版本号
+    version: "0.0.23", // 版本号
     author: "pipiqiang",
     cacheControl: "no-store",
     srcUrl: 'https://raw.kkgithub.com/ycq3/test/master/plugin.js',
@@ -65,7 +65,7 @@ module.exports = {
         })
 
         console.log("获取歌词", {data})
-        return data.data
+        return {rawLrc: data.data}
     },
 
     // 获取音源
